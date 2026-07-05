@@ -1,6 +1,6 @@
 # Diff Viewer
 
-[![CI](https://github.com/obrenoalvim/diffViewer/actions/workflows/ci.yml/badge.svg)](https://github.com/obrenoalvim/diffViewer/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![CI](https://github.com/obrenoalvim/diff-viewer/actions/workflows/ci.yml/badge.svg)](https://github.com/obrenoalvim/diff-viewer/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A modern, 100% client-side web application for comparing text differences in real-time. Built with Next.js 13 (App Router), TypeScript, and Tailwind CSS, featuring unified and side-by-side diff views with multiple customization options.
 

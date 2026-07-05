@@ -31,4 +31,4 @@ Built with Next.js 13 (App Router), TypeScript, Tailwind CSS, and the `diff` lib
 ## Links
 
 - App: https://diff-viewer.vercel.app
-- Source: https://github.com/obrenoalvim/diffViewer
+- Source: https://github.com/obrenoalvim/diff-viewer
