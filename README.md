@@ -1,3 +1,5 @@
+English | [Português](README.pt.md)
+
 # Diff Viewer
 
 [![CI](https://github.com/obrenoalvim/diff-viewer/actions/workflows/ci.yml/badge.svg)](https://github.com/obrenoalvim/diff-viewer/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -51,8 +53,8 @@ A modern, 100% client-side web application for comparing text differences in rea
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd text-diff-viewer
+git clone https://github.com/obrenoalvim/diff-viewer.git
+cd diff-viewer
 ```
 
 2. Install dependencies:
