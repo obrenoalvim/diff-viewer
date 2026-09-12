@@ -61,64 +61,36 @@ export function computeDiff(
       break;
   }
 
-  const hunks: DiffHunk[] = changes.map((change) => {
-    let type: 'added' | 'removed' | 'unchanged';
-    if (change.added) {
-      type = 'added';
-    } else if (change.removed) {
-      type = 'removed';
-    } else {
-      type = 'unchanged';
-    }
-
-    return {
-      type,
-      value: change.value,
-      changes: options.granularity === 'lines' ? undefined : [change],
-    };
-  });
-
-  const hasChanges = changes.some(c => c.added || c.removed);
-
-  return { hunks, hasChanges };
-}
-
-export function computeLineDiff(
-  leftText: string,
-  rightText: string,
-  options: DiffOptions = {}
-): ProcessedDiff {
-  const normalizedLeft = normalizeText(leftText, options);
-  const normalizedRight = normalizeText(rightText, options);
-
-  const changes = diffLines(normalizedLeft, normalizedRight);
-
+  const isLineGranularity = !options.granularity || options.granularity === 'lines';
   let leftLineNumber = 1;
   let rightLineNumber = 1;
 
   const hunks: DiffHunk[] = changes.map((change) => {
     let type: 'added' | 'removed' | 'unchanged';
-    let lineNumber: number;
+    let lineNumber: number | undefined;
 
     if (change.added) {
       type = 'added';
       lineNumber = rightLineNumber;
-      rightLineNumber += change.count || 0;
+      if (isLineGranularity) rightLineNumber += change.count || 0;
     } else if (change.removed) {
       type = 'removed';
       lineNumber = leftLineNumber;
-      leftLineNumber += change.count || 0;
+      if (isLineGranularity) leftLineNumber += change.count || 0;
     } else {
       type = 'unchanged';
       lineNumber = leftLineNumber;
-      leftLineNumber += change.count || 0;
-      rightLineNumber += change.count || 0;
+      if (isLineGranularity) {
+        leftLineNumber += change.count || 0;
+        rightLineNumber += change.count || 0;
+      }
     }
 
     return {
       type,
       value: change.value,
-      lineNumber,
+      lineNumber: isLineGranularity ? lineNumber : undefined,
+      changes: isLineGranularity ? undefined : [change],
     };
   });
 
@@ -130,7 +102,7 @@ export function computeLineDiff(
 export function diffToText(diff: ProcessedDiff): string {
   return diff.hunks
     .map((hunk) => {
-      const lines = hunk.value.split('\n').filter(l => l || hunk.value.endsWith('\n'));
+      const lines = hunk.value.split('\n').filter((l, i, arr) => l || i < arr.length - 1);
       return lines
         .map((line) => {
           if (hunk.type === 'added') return `+ ${line}`;
