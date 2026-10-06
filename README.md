@@ -1,8 +1,26 @@
-English | [Português](README.pt.md)
+<div align="center">
+
+<img src="app/icon.png" alt="Diff Viewer logo" width="120" height="120">
 
 # Diff Viewer
 
-[![CI](https://github.com/obrenoalvim/diff-viewer/actions/workflows/ci.yml/badge.svg)](https://github.com/obrenoalvim/diff-viewer/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+**Compare two pieces of text and see exactly what changed, right in your browser.**<br>
+Unified or side-by-side, by line, word or character, with HTML export. 100% client-side: nothing is uploaded.
+
+[![Live demo](https://img.shields.io/badge/Live_demo-open-3B82F6?style=for-the-badge&logo=vercel&logoColor=white)](https://diff-viewer-olive.vercel.app)
+
+[![CI](https://github.com/obrenoalvim/diff-viewer/actions/workflows/ci.yml/badge.svg)](https://github.com/obrenoalvim/diff-viewer/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/obrenoalvim/diff-viewer?style=flat&logo=github&color=3b82f6)](https://github.com/obrenoalvim/diff-viewer/stargazers)
+[![PWA](https://img.shields.io/badge/PWA-offline-5A0FC8?logo=pwa&logoColor=white)](#features)
+
+**English** · [Português](README.pt.md)
+
+[Features](#features) · [Getting started](#getting-started) · [Usage](#usage) · [Browser support](#browser-support) · [FAQ](#faq)
+
+</div>
+
+---
 
 A modern, 100% client-side web application for comparing text differences in real-time. Built with Next.js 13 (App Router), TypeScript, and Tailwind CSS, featuring unified and side-by-side diff views with multiple customization options.
 
@@ -144,3 +162,42 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 - Diff calculation by [jsdiff](https://github.com/kpdecker/jsdiff)
 - Icons from [Lucide](https://lucide.dev/)
 - UI components inspired by [shadcn/ui](https://ui.shadcn.com/)
+
+---
+
+## FAQ
+
+**Is my text sent anywhere?**
+No. The comparison runs 100% in your browser, and there is no backend.
+
+**Can I compare by word or by character?**
+Yes. Pick Lines, Words or Characters, and optionally ignore case and whitespace.
+
+**Does it work offline?**
+Yes. It is a Progressive Web App, and it needs a browser with Service Worker support.
+
+**How do I share a diff?**
+Copy it as unified text, or export a self-contained HTML file with inline styles.
+
+**Why does the side-by-side view switch to unified on my phone?**
+It switches automatically on mobile devices to keep the columns readable.
+
+## More web tools by the same author
+
+- [**pdf-metadata-editor**](https://github.com/obrenoalvim/pdf-metadata-editor): edit a PDF's title, author and other details in your browser.
+- [**custom-cpf**](https://github.com/obrenoalvim/custom-cpf): generate and validate Brazilian CPF numbers in the browser.
+- [**status-hub**](https://github.com/obrenoalvim/status-hub): one grid for every status page you check.
+
+## License
+
+[MIT](LICENSE)
+
+---
+
+<div align="center">
+
+If Diff Viewer saved you a trip to a diff tool, a ⭐ helps other people find it.
+
+<sub>**Topics:** diff · text-diff · diff-viewer · text-comparison · jsdiff · client-side · pwa · nextjs · react · typescript · developer-tools</sub>
+
+</div>
